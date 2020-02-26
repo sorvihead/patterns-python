@@ -1,10 +1,10 @@
 import click
+import unittest
 
 
 @click.command()
 @click.argument('test_names', nargs=-1)
 def test(test_names):
-    import unittest
     if test_names:
         tests = unittest.TestLoader().loadTestsFromNames(test_names)
     else:
